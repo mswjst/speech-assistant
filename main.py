@@ -60,8 +60,8 @@ def respond(voice_data):
         response = requests.get(
             'https://www.youtube.com/results?search_query=' + music)
         soup = BeautifulSoup(response.text, 'html.parser')
-        posts = soup.findAll(class_='yt-lockup-title')[0].find('a')['href']
-        webbrowser.get().open('https://www.youtube.com/' + posts)
+        watch = soup.findAll(class_='yt-lockup-title')[0].find('a')['href']
+        webbrowser.get().open('https://www.youtube.com/' + watch)
     if 'exit' in voice_data:
         exit()
 
